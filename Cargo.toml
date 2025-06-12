@@ -1,0 +1,27 @@
+[package]
+name = "openai-realtime"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+async-trait = "0.1.88"
+base64 = "0.22.1"
+ezsockets = { version = "0.7.0" , features = ["tls", "rustls"]}
+nanoid = "0.4.0"
+reqwest = { version = "0.12.19", features = ["json"] }
+serde = { version = "1.0.219", features = ["derive"] }
+serde_json = "1.0.140"
+tokio = { version = "1.45.1", features = ["full"] }
+url = { version = "2.5.4", features = ["serde"] }
+anyhow = "1.0.98"
+crossbeam-channel = "0.5.15"
+tracing = "0.1.41"
+
+[dev-dependencies]
+clap = { version = "4.5.40", features = ["derive"] }
+codewandler-audio = {path = "../codewandler-audio"}
+tracing-subscriber = "0.3.19"
+
+[[example]]
+name = "two_agents"
+path = "examples/two_agents.rs"
